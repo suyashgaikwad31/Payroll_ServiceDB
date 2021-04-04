@@ -125,3 +125,47 @@ mysql> SELECT * FROM employee_payroll;
 +----+---------+--------+---------+------------+
 3 rows in set (0.00 sec)
 
+UC7
+mysql> SELECT AVG(salary) FROM employee_payroll WHERE gender = 'M' GROUP BY gender;
++-------------+
+| AVG(salary) |
++-------------+
+|     2000000 |
++-------------+
+1 row in set (0.06 sec)
+
+mysql> SELECT SUM(salary) FROM employee_payroll WHERE gender = 'M' GROUP BY gender;
++-------------+
+| SUM(salary) |
++-------------+
+|     4000000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(salary) FROM employee_payroll GROUP BY gender;
++-------------+
+| SUM(salary) |
++-------------+
+|     4000000 |
+|     3000000 |
++-------------+
+2 rows in set (0.01 sec)
+
+mysql> SELECT MAX(salary) FROM employee_payroll GROUP BY gender;
++-------------+
+| MAX(salary) |
++-------------+
+|     3000000 |
+|     3000000 |
++-------------+
+2 rows in set (0.05 sec)
+
+mysql> SELECT MIN(salary) FROM employee_payroll GROUP BY gender;
++-------------+
+| MIN(salary) |
++-------------+
+|     1000000 |
+|     3000000 |
++-------------+
+2 rows in set (0.00 sec)
+
