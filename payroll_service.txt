@@ -88,3 +88,40 @@ mysql> SELECT * FROM employee_payroll
 +----+---------+---------+------------+
 3 rows in set (0.03 sec)
 
+UC6
+mysql> ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
+Query OK, 0 rows affected (1.66 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update employee_payroll set gender = 'F' where name = 'Terisa';
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set gender = 'M' where name = 'Bill' or name = 'Charlie';
+Query OK, 2 rows affected (0.06 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll;
++----+---------+--------+---------+------------+
+| id | name    | gender | salary  | start      |
++----+---------+--------+---------+------------+
+|  1 | Bill    | M      | 1000000 | 2018-01-03 |
+|  2 | Terisa  | F      | 2000000 | 2019-11-13 |
+|  3 | Charlie | M      | 3000000 | 2020-05-21 |
++----+---------+--------+---------+------------+
+3 rows in set (0.04 sec)
+
+mysql> update employee_payroll set salary = 3000000.00 where name = 'Terisa';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll;
++----+---------+--------+---------+------------+
+| id | name    | gender | salary  | start      |
++----+---------+--------+---------+------------+
+|  1 | Bill    | M      | 1000000 | 2018-01-03 |
+|  2 | Terisa  | F      | 3000000 | 2019-11-13 |
+|  3 | Charlie | M      | 3000000 | 2020-05-21 |
++----+---------+--------+---------+------------+
+3 rows in set (0.00 sec)
+
