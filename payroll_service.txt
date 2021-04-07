@@ -220,6 +220,8 @@ mysql> update employee_payroll set department = 'Sales' where name = 'Terisa';
 Query OK, 1 row affected (0.09 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
+UC10
+
 mysql> INSERT INTO employee_payroll (name, department,  gender,  basic_pay, deductions,  taxable_pay,  tax, net_pay,  start ) VALUES
     -> ('Terisa', 'Marketing', 'F', 3000000.00, 1000000.00, 2000000.00, 5000000.00, 15000000.00, '2018-01-03' );
 Query OK, 1 row affected (0.09 sec)
